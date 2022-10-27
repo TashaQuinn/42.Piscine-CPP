@@ -6,13 +6,9 @@
 /*   By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 22:41:30 by jbania            #+#    #+#             */
-/*   Updated: 2022/10/19 04:49:11 by jbania           ###   ########.fr       */
+/*   Updated: 2022/10/24 22:27:11 by jbania           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-# define DEFAULT "\033[0m"
-# define RED     "\033[31m"
-# define GREEN   "\033[32m"
 
 #include "Dog.hpp"
 #include "Cat.hpp"
@@ -28,23 +24,23 @@ int main() {
     
     std::cout << std::endl;
     
-    std::cout << GREEN << "Animal: " << animal->getType() << " " << DEFAULT << std::endl; 
+    std::cout << "Animal: " << animal->getType() << " " << std::endl; 
     animal->makeSound();
     std::cout << std::endl;
     
-    std::cout << GREEN << "Cat: " << cat->getType() << " " << DEFAULT << std::endl;
+    std::cout << "Cat: " << cat->getType() << " " << std::endl;
     cat->makeSound();
     std::cout << std::endl;
     
-    std::cout << GREEN << "Dog: " << dog->getType() << " " << DEFAULT << std::endl;
+    std::cout << "Dog: " << dog->getType() << " " << std::endl;
     dog->makeSound();
     std::cout << std::endl;
 
-    std::cout << RED << "WrongAnimal: " << wrongAnimal->getType() << " " << DEFAULT << std::endl; 
+    std::cout << "WrongAnimal: " << wrongAnimal->getType() << " " << std::endl; 
     wrongAnimal->makeSound();
     std::cout << std::endl;
     
-    std::cout << RED << "WrongCat: " << wrongCat->getType() << " " << DEFAULT << std::endl;
+    std::cout << "WrongCat: " << wrongCat->getType() << " " << std::endl;
     wrongCat->makeSound();
     std::cout << std::endl;
     

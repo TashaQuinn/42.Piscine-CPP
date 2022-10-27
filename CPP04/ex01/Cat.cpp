@@ -6,7 +6,7 @@
 /*   By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 22:37:58 by jbania            #+#    #+#             */
-/*   Updated: 2022/10/19 04:17:27 by jbania           ###   ########.fr       */
+/*   Updated: 2022/10/21 03:02:32 by jbania           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,9 @@ Cat &Cat::operator=(Cat const &copy) {
     
     if (this != &copy)
     {
-        Animal::operator=(copy); //
-        if (_brain) //
-            delete _brain; //
-        _brain = new Brain(*copy._brain); //
+        if (_brain)
+            delete _brain;
+        _brain = new Brain(*copy._brain);
     }
     
     type = copy.type;
@@ -46,7 +45,7 @@ Cat &Cat::operator=(Cat const &copy) {
     
 Cat::~Cat() {
     
-    delete _brain; //?
+    delete _brain;
     std::cout << "Destructor for Cat called" << std::endl;
     
 }
