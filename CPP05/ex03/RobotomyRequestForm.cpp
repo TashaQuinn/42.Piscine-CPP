@@ -6,7 +6,7 @@
 /*   By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 00:12:45 by jbania            #+#    #+#             */
-/*   Updated: 2022/10/30 07:56:00 by jbania           ###   ########.fr       */
+/*   Updated: 2022/10/30 07:54:01 by jbania           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ RobotomyRequestForm::~RobotomyRequestForm() {}
 
 
 void	RobotomyRequestForm::execute(Bureaucrat const &executor) const {
-	
+    
     if (getSigned()) {
         
 		if (executor.getGrade() <= this->getExecuteGrade()) {

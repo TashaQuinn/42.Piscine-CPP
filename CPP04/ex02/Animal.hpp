@@ -6,7 +6,7 @@
 /*   By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 22:37:58 by jbania            #+#    #+#             */
-/*   Updated: 2022/10/19 04:45:14 by jbania           ###   ########.fr       */
+/*   Updated: 2022/10/29 21:24:22 by jbania           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ public:
     virtual ~Animal();
 
     std::string getType() const;
-    virtual void makeSound() = 0;
+    virtual void makeSound() const = 0;
     
 };
 

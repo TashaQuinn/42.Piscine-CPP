@@ -6,13 +6,13 @@
 /*   By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 00:10:03 by jbania            #+#    #+#             */
-/*   Updated: 2022/10/29 22:19:14 by jbania           ###   ########.fr       */
+/*   Updated: 2022/10/29 22:21:27 by jbania           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
- 
+
 #include <iostream>
 #include "Form.hpp"
 
@@ -34,6 +34,7 @@ public:
 	const std::string getName() const;
 	int getGrade() const;
 	void signForm(Form &sign);
+	void executeForm(Form const &form);
 	
 	void checkGrade() const;
 	int decrGrade();

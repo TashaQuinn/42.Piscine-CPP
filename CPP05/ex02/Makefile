@@ -6,7 +6,7 @@
 #    By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/25 00:08:43 by jbania            #+#    #+#              #
-#    Updated: 2022/10/25 00:08:47 by jbania           ###   ########.fr        #
+#    Updated: 2022/10/29 06:53:30 by jbania           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,11 +15,15 @@ NAME	=	bureaucrat
 SRC		=	main.cpp \
 			Bureaucrat.cpp \
 			Form.cpp \
-			ShrubberyCreationForm.cpp
+			ShrubberyCreationForm.cpp \
+			PresidentialPardonForm.cpp \
+			RobotomyRequestForm.cpp
 
 HDR		=	Bureaucrat.hpp \
 			Form.hpp \
-			ShrubberyCreationForm.hpp
+			ShrubberyCreationForm.hpp \
+			PresidentialPardonForm.hpp \
+			RobotomyRequestForm.hpp
 
 OBJ 	=	$(SRC:.cpp=.o)
 

@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 22:32:06 by jbania            #+#    #+#             */
-/*   Updated: 2022/10/25 06:29:01 by jbania           ###   ########.fr       */
+/*   Created: 2022/10/25 00:09:11 by jbania            #+#    #+#             */
+/*   Updated: 2022/10/29 23:34:31 by jbania           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
-# define ICHARACTER_HPP
+#ifndef INTERN_HPP
+# define INTERN_HPP
 
-#include "AMateria.hpp"
-    
-class ICharacter {
-    
+#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
+
+class Intern {
+
 public:
 
-    virtual ~ICharacter() {};
-    
-    virtual std::string const &getName() const = 0;
-    
-    virtual void equip(AMateria *m) = 0;
-    virtual void unequip(int idx) = 0;
-    virtual void use(int idx, ICharacter &target) = 0;
+    Intern();
+    Intern(Intern const &copy);
+    Intern &operator=(const Intern &copy);
+    ~Intern();
 
+    Form *makeForm(std::string formName, std::string targetName);
+    
 };
 
 #endif

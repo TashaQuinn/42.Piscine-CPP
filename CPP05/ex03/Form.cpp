@@ -6,7 +6,7 @@
 /*   By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 00:09:43 by jbania            #+#    #+#             */
-/*   Updated: 2022/10/30 07:59:26 by jbania           ###   ########.fr       */
+/*   Updated: 2022/10/30 07:55:26 by jbania           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,12 @@ std::ostream & operator<<(std::ostream &outputObj, Form const &inst) {
     outputObj << inst.getName() << ", grade to sign = " << inst.getSignGrade()
     << ", grade to execute = " << inst.getExecuteGrade();
     
+    std::cout << std::endl;
+    
     if (inst.getSigned())
-        std::cout << ", form is signed";
+        std::cout << "Form was signed";
     else
-        std::cout << ", form is not signed";
+        std::cout << "Form was not signed";
 
     std::cout << std::endl;
     
@@ -82,9 +84,9 @@ std::ostream & operator<<(std::ostream &outputObj, Form const &inst) {
     
 }
 
-/*____________________________________________________________________________________________________________*/
+/*_________________________________________________________________________________________________________*/
 
-
+ 
 void Form::beSigned(Bureaucrat &brc) {
 
     if (brc.getGrade() > this->_reqGradeToSign)
@@ -110,6 +112,12 @@ const char *Form::GradeTooHighException::what() const throw() {
 
 const char *Form::GradeTooLowException::what() const throw() {
     
-    return "grade is too low!";
+    return "Grade is too low!";
+
+}
+
+const char *Form::FormNotSignedException::what() const throw() {
+    
+    return "Form should be signed first";
 
 }

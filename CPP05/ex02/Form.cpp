@@ -5,104 +5,116 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 00:12:23 by jbania            #+#    #+#             */
-/*   Updated: 2022/10/25 00:12:27 by jbania           ###   ########.fr       */
+/*   Created: 2022/10/25 00:09:43 by jbania            #+#    #+#             */
+/*   Updated: 2022/10/30 07:57:22 by jbania           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form() 
-    : _name("default"), _isSigned(false), _gradeToSign(Form::lowestGrade), \
-     _gradeToExecute(Form::lowestGrade)
-    {
-        checkGrade();
-    }
-
-Form::Form(const std::string name, const int gradeToSign, const int gradeToExecute)
-    : _name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
-    {
-        checkGrade();
-    }
-
-Form::Form(Form const &src)
-    : _name(src._name), _isSigned(src._isSigned), _gradeToSign(src._gradeToSign), _gradeToExecute(src._gradeToExecute)
-    {
-        checkGrade();
-    }
-
-Form::~Form()
-{
+Form::Form() : _name("Paper"), _isSigned(false), _reqGradeToSign(lowestGrade), _reqGradeToExecute(lowestGrade) {
+        
 }
 
-Form &Form::operator=(Form const &rhs)
-{
-    if (this != &rhs)
-    {
-        _isSigned = rhs._isSigned;
-        checkGrade();
-    }
-    return *this;
+Form::Form(const std::string name, const int reqGradeToSign, const int reqGradeToExecute)
+    : _name(name), _reqGradeToSign(reqGradeToSign), _reqGradeToExecute(reqGradeToExecute) {
+    
+    checkGrade();
+    this->_isSigned = false;
+    
 }
 
-const std::string &Form::getName() const 
-{
-    return _name;
+Form::Form(Form const &copy) : _name(copy._name), _reqGradeToSign(copy._reqGradeToSign), _reqGradeToExecute(copy._reqGradeToExecute){
+    
+    *this = copy; 
+        
 }
 
-bool Form::getiIsSigned() const
-{
-    return _isSigned;
+Form::~Form() {}
+
+Form &Form::operator=(Form const &copy) {
+
+    if (this->_isSigned == copy._isSigned)
+        return (*this);
+    return (*this);
+    
 }
 
-int Form::getGradeToSign() const
-{
-    return _gradeToSign;
+const std::string Form::getName() const {
+
+    return this->_name;
+    
 }
 
-int Form::getGradeToExecute() const
-{
-    return _gradeToExecute;
+
+bool Form::getSigned() const {
+    
+    return this->_isSigned;
+    
 }
 
-void Form::beSigned(Bureaucrat const &rhs)
-{
-    if (rhs.getGrade() > _gradeToSign)
-        throw Form::GradeTooLowException();
-    _isSigned = true;
+int Form::getSignGrade() const {
+    
+    return this->_reqGradeToSign;
+    
 }
 
-void Form::checkGrade() const 
-{
-    if (_gradeToSign < Form::highestGrade || _gradeToExecute < Form::highestGrade)
-        throw Form::GradeTooHighException();
-    else if (_gradeToSign > Form::lowestGrade || _gradeToExecute > Form::lowestGrade)
-        throw Form::GradeTooLowException();
+
+int Form::getExecuteGrade() const {
+    
+    return this->_reqGradeToExecute;
+    
 }
 
-const char *Form::GradeTooHighException::what() const throw()
-{
-    return ("Grade is too high");
-}
-
-const char *Form::GradeTooLowException::what() const throw()
-{
-    return ("Grade is too low");
-}
-
-const char *Form::CantExecuteForm::what() const throw()
-{
-    return ("Can't execute form");
-}
-
-std::ostream & operator<<(std::ostream &os, Form const &rhs)
-{
-    os << rhs.getName() << ", grade to sign = " << rhs.getGradeToSign()
-    << " grade to execute = " << rhs.getGradeToExecute();
-
-    if (rhs.getiIsSigned())
-        std::cout << "\nForm signed";
+std::ostream & operator<<(std::ostream &outputObj, Form const &inst) {
+    
+    outputObj << inst.getName() << ", grade to sign = " << inst.getSignGrade()
+    << ", grade to execute = " << inst.getExecuteGrade();
+    
+    std::cout << std::endl;
+    
+    if (inst.getSigned())
+        std::cout << "Form was signed";
     else
-        std::cout << "\nForm not signed";
-    return os;
+        std::cout << "Form was not signed";
+
+    std::cout << std::endl;
+    
+    return outputObj;
+    
+}
+ 
+void Form::beSigned(Bureaucrat &brc) {
+
+    if (brc.getGrade() > this->_reqGradeToSign)
+        throw GradeTooLowException();
+    this->_isSigned = true;
+    
+}
+
+void Form::checkGrade() const {
+    
+	if ((this->_reqGradeToSign < this->highestGrade) || (this->_reqGradeToExecute < this->highestGrade))
+		throw Bureaucrat::GradeTooHighException();
+	else if ((this->_reqGradeToSign > this->lowestGrade) || (this->_reqGradeToExecute > this->lowestGrade))
+		throw Bureaucrat::GradeTooLowException();
+	
+}
+
+const char *Form::GradeTooHighException::what() const throw() {
+    
+    return "Sweet gorilla of Manila, grade is too high!";
+    
+}
+
+const char *Form::GradeTooLowException::what() const throw() {
+    
+    return "Sweet gorilla of Manila, grade is too low!";
+
+}
+
+const char *Form::FormNotSignedException::what() const throw() {
+    
+    return "Form should be signed first";
+
 }

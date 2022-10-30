@@ -6,7 +6,7 @@
 /*   By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 22:37:58 by jbania            #+#    #+#             */
-/*   Updated: 2022/10/19 00:56:36 by jbania           ###   ########.fr       */
+/*   Updated: 2022/10/30 08:08:15 by jbania           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 WrongCat::WrongCat() {
     
-    type = "WrongCat";
+    type = "wrongCat";
     std::cout << "Default constructor for WrongCat called" << std::endl;
     
 }
@@ -40,7 +40,8 @@ WrongCat::~WrongCat() {
     
 }
 
-/*.....................................................................*/
+/*__________________________________________________________________________*/
+
 
 void WrongCat::makeSound() {
     

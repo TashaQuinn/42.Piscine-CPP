@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 00:13:00 by jbania            #+#    #+#             */
-/*   Updated: 2022/10/29 23:09:40 by jbania           ###   ########.fr       */
+/*   Created: 2022/10/29 06:55:17 by jbania            #+#    #+#             */
+/*   Updated: 2022/10/29 22:51:40 by jbania           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_HPP
-# define ROBOTOMYREQUESTFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+# define PRESIDENTIALPARDONFORM_HPP
 
 #include "Form.hpp"
-#include <cstdlib>
- 
-class RobotomyRequestForm : public Form {
 
-    std::string _target;
+class PresidentialPardonForm : public Form {
     
+    std::string _target;
+     
 public:
 
-    RobotomyRequestForm();
-    RobotomyRequestForm(const std::string target);
-    RobotomyRequestForm(RobotomyRequestForm const &copy);
-    ~RobotomyRequestForm();
-    RobotomyRequestForm &operator=(RobotomyRequestForm const &copy);
+    PresidentialPardonForm();
+    PresidentialPardonForm(const std::string target);
+    PresidentialPardonForm(PresidentialPardonForm const &copy);
+    ~PresidentialPardonForm();
+    PresidentialPardonForm &operator=(PresidentialPardonForm const &copy);
 
     void execute(Bureaucrat const &executor) const;
-
+    
 };
 
 #endif

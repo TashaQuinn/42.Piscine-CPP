@@ -6,7 +6,7 @@
 /*   By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 00:09:11 by jbania            #+#    #+#             */
-/*   Updated: 2022/10/29 22:17:12 by jbania           ###   ########.fr       */
+/*   Updated: 2022/10/29 22:57:26 by jbania           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ public:
     
     class GradeTooLowException: public std::exception { public: const char * what() const throw(); };
     class GradeTooHighException: public std::exception { public: const char * what() const throw(); };
-
+    class FormNotSignedException: public std::exception { public: const char * what() const throw(); };
+     
 };
 
 std::ostream & operator<<(std::ostream &outputObj, Form const &inst);

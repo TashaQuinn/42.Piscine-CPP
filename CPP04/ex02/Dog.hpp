@@ -6,7 +6,7 @@
 /*   By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 22:37:58 by jbania            #+#    #+#             */
-/*   Updated: 2022/10/19 03:18:44 by jbania           ###   ########.fr       */
+/*   Updated: 2022/10/29 21:30:06 by jbania           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ public:
     Dog &operator=(Dog const &copy);
     ~Dog();
 
-    void makeSound();
+    void makeSound() const;
+    Brain *getBrain();
     
 };
 

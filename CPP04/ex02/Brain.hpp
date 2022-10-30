@@ -6,7 +6,7 @@
 /*   By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 22:37:58 by jbania            #+#    #+#             */
-/*   Updated: 2022/10/19 03:21:36 by jbania           ###   ########.fr       */
+/*   Updated: 2022/10/29 21:30:27 by jbania           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ public:
     Brain &operator=(Brain const &copy);
     ~Brain();
 
+    std::string getIdea(int i);
+    void setIdea(int i, std::string idea);
     
 };
 

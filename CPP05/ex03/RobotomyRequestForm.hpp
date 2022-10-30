@@ -6,7 +6,7 @@
 /*   By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 00:13:00 by jbania            #+#    #+#             */
-/*   Updated: 2022/10/29 23:09:40 by jbania           ###   ########.fr       */
+/*   Updated: 2022/10/29 22:57:05 by jbania           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define ROBOTOMYREQUESTFORM_HPP
 
 #include "Form.hpp"
-#include <cstdlib>
  
 class RobotomyRequestForm : public Form {
 

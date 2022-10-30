@@ -6,7 +6,7 @@
 /*   By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 22:37:58 by jbania            #+#    #+#             */
-/*   Updated: 2022/10/19 00:43:45 by jbania           ###   ########.fr       */
+/*   Updated: 2022/10/30 08:01:34 by jbania           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,9 @@ std::ostream &operator<<(std::ostream &outputObj, Animal const &inst) {
     
 }
 
-/*.....................................................................*/
+
+/*__________________________________________________________________________*/
+
 
 std::string Animal::getType() const {
 
@@ -54,7 +56,7 @@ std::string Animal::getType() const {
     
 }
 
-void Animal::makeSound() {
+void Animal::makeSound() const {
     
     std::cout << "*SOME ANIMAL SOUND*" << std::endl;
     

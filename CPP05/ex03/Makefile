@@ -5,27 +5,27 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/15 00:10:50 by jbania            #+#    #+#              #
-#    Updated: 2022/10/15 00:11:10 by jbania           ###   ########.fr        #
+#    Created: 2022/10/29 07:39:17 by jbania            #+#    #+#              #
+#    Updated: 2022/10/29 07:39:31 by jbania           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	materia
+NAME	=	bureaucrat
 
 SRC		=	main.cpp \
-			AMateria.cpp \
-			Cure.cpp \
-			Ice.cpp \
-			Character.cpp \
-			MateriaSource.cpp
+			Bureaucrat.cpp \
+			Form.cpp \
+			ShrubberyCreationForm.cpp \
+			RobotomyRequestForm.cpp \
+			PresidentialPardonForm.cpp \
+			Intern.cpp
 
-HDR		=	AMateria.hpp \
-			Cure.hpp \
-			Ice.hpp \
-			Character.hpp \
-			ICharacter.hpp \
-			IMateriaSource.hpp \
-			MateriaSource.hpp
+HDR		=	Bureaucrat.hpp \
+			Form.hpp \
+			ShrubberyCreationForm.hpp \
+			RobotomyRequestForm.hpp \
+			PresidentialPardonForm.hpp \
+			Intern.h
 
 OBJ 	=	$(SRC:.cpp=.o)
 

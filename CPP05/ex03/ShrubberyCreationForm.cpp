@@ -6,7 +6,7 @@
 /*   By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 00:13:08 by jbania            #+#    #+#             */
-/*   Updated: 2022/10/30 07:55:55 by jbania           ###   ########.fr       */
+/*   Updated: 2022/10/30 07:53:50 by jbania           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,11 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
     
-    std::string	const filename = (this->_target + "_shrubbery");
-    
     if (getSigned()) {
         
 		if (executor.getGrade() <= this->getExecuteGrade()) {  
-		    std::ofstream treeFile(filename.c_str());;
+		    std::fstream treeFile;
+            treeFile.open("EcoEnthusiast_shrubbery", std::fstream::out | std::fstream::trunc);
             if (!treeFile.is_open() || treeFile.bad())
                 throw ShrubberyCreationForm::FileCreationError();
             treeFile << "             _-_                   _-_\n"
@@ -56,6 +55,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
                     "       |  something, it is so damn   |         \n"
                     "       |    much work to get it?     |         \n"
                     "       \\___________________________/      \n" << std::endl;
+            treeFile.close();
             treeFile.close();
             std::cout << "Shrubbery created." << std::endl;
         }

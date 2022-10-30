@@ -6,7 +6,7 @@
 /*   By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 22:37:58 by jbania            #+#    #+#             */
-/*   Updated: 2022/10/19 03:28:03 by jbania           ###   ########.fr       */
+/*   Updated: 2022/10/30 08:01:52 by jbania           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,27 @@ Brain &Brain::operator=(Brain const &copy) {
 Brain::~Brain() {
     
     std::cout << "Destructor for Brain called" << std::endl;
+    
+}
+
+
+/*__________________________________________________________________________*/
+
+
+std::string Brain::getIdea(int i) {
+    
+    if (i < 0 || i > 99 || ideas[i].empty()) 
+        return "Please enter correct index";
+
+    return ideas[i];
+    
+}
+
+void Brain::setIdea(int i, std::string idea) {
+    
+    if (i < 0 || i > 99)
+        std::cout << "Please enter correct index" << std::endl;
+    
+    ideas[i] = idea;
     
 }
