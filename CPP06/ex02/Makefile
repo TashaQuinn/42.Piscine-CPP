@@ -5,23 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/15 00:11:43 by jbania            #+#    #+#              #
-#    Updated: 2022/11/02 06:15:19 by jbania           ###   ########.fr        #
+#    Created: 2022/11/01 12:39:43 by jbania            #+#    #+#              #
+#    Updated: 2022/11/02 06:14:01 by jbania           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	animal
+NAME	=	identify
 
 SRC		=	main.cpp \
-			Animal.cpp \
-			Cat.cpp \
-			Dog.cpp \
-			Brain.cpp
-
-HDR		=	Animal.hpp \
-			Dog.hpp \
-			Cat.hpp \
-			Brain.hpp
 
 OBJ 	=	$(SRC:.cpp=.o)
 
@@ -38,7 +29,7 @@ $(NAME):	$(OBJ)
 
 %.o:		%.cpp $(HDR)
 			$(CC) $(FLAGS) -c $< -o $@
-
+	
 clean:
 			$(RM) $(OBJ)
 
@@ -46,8 +37,8 @@ fclean:		clean
 			$(RM) $(NAME)
 
 re:			fclean all
-
-val:
+	
+val:		
 			valgrind --leak-check=full -s ./$(NAME)
 
 .PHONY:		all clean fclean re

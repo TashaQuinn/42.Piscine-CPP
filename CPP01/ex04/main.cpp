@@ -6,7 +6,7 @@
 /*   By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 03:27:01 by jbania            #+#    #+#             */
-/*   Updated: 2022/10/10 22:00:17 by jbania           ###   ########.fr       */
+/*   Updated: 2022/11/05 01:12:23 by jbania           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@ int main(int argc, char *argv[]) {
     std::ofstream output;
     size_t index;
     
-    if (argc != 4)
-    {
+    if (argc != 4) {
+        
         std::cerr << "Incorrect number of arguments" << std::endl;
         return 1;
+        
     }
     
     filename = argv[1];
@@ -31,24 +32,24 @@ int main(int argc, char *argv[]) {
     s2 = argv[3];
 
     input.open(filename);
-    if(input.fail()) {
+    
+    if (input.fail()) {
         
         std::cerr   << "The program experienced an error trying to open " << filename 
-                    << ". Please enter the correct filename." << std::endl;
+                    << ". Please enter correct filename." << std::endl;
         return 1;
     }
     
     output.open(filename + ".replace");
     
-    while(getline(input, content))
-    {
-        while((index = content.find(s1)) != std::string::npos)
-        {
+    while (getline(input, content)) {
+        
+        while((index = content.find(s1)) != std::string::npos) {
             output << content.substr(0, index);
             output << s2;
             content.erase(0, index + s1.length());
         }
-        output << content << "\n";
+        //output << content << "\n";
     }
 
     input.close();

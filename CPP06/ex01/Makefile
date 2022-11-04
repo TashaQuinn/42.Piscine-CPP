@@ -5,23 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/15 00:11:43 by jbania            #+#    #+#              #
-#    Updated: 2022/11/02 06:15:19 by jbania           ###   ########.fr        #
+#    Created: 2022/11/01 12:35:27 by jbania            #+#    #+#              #
+#    Updated: 2022/11/02 06:12:28 by jbania           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	animal
+NAME	=	serialize
 
 SRC		=	main.cpp \
-			Animal.cpp \
-			Cat.cpp \
-			Dog.cpp \
-			Brain.cpp
-
-HDR		=	Animal.hpp \
-			Dog.hpp \
-			Cat.hpp \
-			Brain.hpp
 
 OBJ 	=	$(SRC:.cpp=.o)
 

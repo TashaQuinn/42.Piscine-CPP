@@ -6,7 +6,7 @@
 #    By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/15 00:12:18 by jbania            #+#    #+#              #
-#    Updated: 2022/10/15 00:12:19 by jbania           ###   ########.fr        #
+#    Updated: 2022/11/02 06:15:59 by jbania           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,5 +48,8 @@ fclean:		clean
 			$(RM) $(NAME)
 
 re:			fclean all
+
+val:
+			valgrind --leak-check=full -s ./$(NAME)
 
 .PHONY:		all clean fclean re

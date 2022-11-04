@@ -5,23 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/15 00:11:43 by jbania            #+#    #+#              #
-#    Updated: 2022/11/02 06:15:19 by jbania           ###   ########.fr        #
+#    Created: 2022/10/31 21:41:56 by jbania            #+#    #+#              #
+#    Updated: 2022/11/02 06:11:59 by jbania           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	animal
+NAME	=	convert
 
 SRC		=	main.cpp \
-			Animal.cpp \
-			Cat.cpp \
-			Dog.cpp \
-			Brain.cpp
+			Converter.cpp
 
-HDR		=	Animal.hpp \
-			Dog.hpp \
-			Cat.hpp \
-			Brain.hpp
+HDR		=	Converter.hpp
+
 
 OBJ 	=	$(SRC:.cpp=.o)
 

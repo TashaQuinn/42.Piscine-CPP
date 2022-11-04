@@ -6,7 +6,7 @@
 /*   By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 00:10:19 by jbania            #+#    #+#             */
-/*   Updated: 2022/10/30 07:55:42 by jbania           ###   ########.fr       */
+/*   Updated: 2022/11/04 23:47:57 by jbania           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ void Bureaucrat::signForm(Form &form) {
 	 	std::cout << getName() << " signed " << form.getName() << std::endl;
 		
 	}
-	catch (Form::GradeTooLowException e) {
+	catch (Form::GradeTooLowException &e) {
 
 		std::cout << getName() << " couldn't sign " << form.getName() << ", because " << e.what() << std::endl;
 		

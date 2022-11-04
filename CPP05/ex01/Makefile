@@ -6,7 +6,7 @@
 #    By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/25 00:08:09 by jbania            #+#    #+#              #
-#    Updated: 2022/10/25 00:08:16 by jbania           ###   ########.fr        #
+#    Updated: 2022/11/04 23:38:06 by jbania           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRC		=	main.cpp \
 			Form.cpp
 
 HDR		=	Bureaucrat.hpp \
-			Form.h
+			Form.hpp
 
 OBJ 	=	$(SRC:.cpp=.o)
 

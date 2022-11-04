@@ -6,7 +6,7 @@
 #    By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/29 07:39:17 by jbania            #+#    #+#              #
-#    Updated: 2022/10/29 07:39:31 by jbania           ###   ########.fr        #
+#    Updated: 2022/11/04 23:33:07 by jbania           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ HDR		=	Bureaucrat.hpp \
 			ShrubberyCreationForm.hpp \
 			RobotomyRequestForm.hpp \
 			PresidentialPardonForm.hpp \
-			Intern.h
+			Intern.hpp
 
 OBJ 	=	$(SRC:.cpp=.o)
 
@@ -50,5 +50,8 @@ fclean:		clean
 			$(RM) $(NAME)
 
 re:			fclean all
+
+val:
+			valgrind --leak-check=full -s ./$(NAME)
 
 .PHONY:		all clean fclean re
