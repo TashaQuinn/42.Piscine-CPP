@@ -6,7 +6,7 @@
 /*   By: jbania <jbania@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 03:27:01 by jbania            #+#    #+#             */
-/*   Updated: 2022/11/05 01:12:23 by jbania           ###   ########.fr       */
+/*   Updated: 2022/11/06 16:49:07 by jbania           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,16 @@ int main(int argc, char *argv[]) {
     
     while (getline(input, content)) {
         
-        while((index = content.find(s1)) != std::string::npos) {
-            output << content.substr(0, index);
-            output << s2;
-            content.erase(0, index + s1.length());
+        index = content.find(s1, 0);
+        while(index != -1) {
+            
+            content.erase(index, s1.length()); // "I see fire"; "fire": index = 6, length = 4
+            content.insert(index, s2); // "I see "; index = 6, insert: "water" (length = 5)
+            index = index + s2.length(); // index = 6 + 5 = 11
+			index = content.find(s1, index);
+            
         }
-        //output << content << "\n";
+        output << content << std::endl;
     }
 
     input.close();
